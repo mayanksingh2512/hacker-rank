@@ -1,0 +1,22 @@
+class Solution {
+public:
+
+    int guessNumber(int n)
+    {
+        int num=1;
+        int pick=n;
+        
+        while(num<=pick)
+        {
+            int mid=num+(pick-num)/2;
+            if(guess(mid)==0)
+            return mid;
+            else if(guess(mid)==1)
+            num=mid+1;
+            else
+            pick=mid-1;
+        }
+        return -1;
+    }
+    
+};
